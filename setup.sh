@@ -16,4 +16,5 @@ ln -s ./zshrc $HOME/zshrc
 ln -s ./.zshrc $HOME/.zshrc
 
 touch custom.zsh
-echo "echo 'Put yout custom stuff in: custom.zsh'" >> custom.zsh
+echo "echo 'Put yout custom stuff in: $HOME/custom.zsh'" >> custom.zsh
+cp ./custom.zsh $HOME/custom.zsh
