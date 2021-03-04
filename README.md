@@ -17,6 +17,9 @@ Simple zshrc
    - gitslow -> fix slow repos with oh my zsh
 ```
 
+## Add yours? 
+After setup a custom.zsh file is created, add your stuff there. 
+
 
 ## Setup
 ```

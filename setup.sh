@@ -15,3 +15,5 @@ cd $CURRENTDIR
 ln -s ./zshrc $HOME/zshrc
 ln -s ./.zshrc $HOME/.zshrc
 
+touch custom.zsh
+echo "echo 'Put yout custom stuff in: custom.zsh'" >> custom.zsh
