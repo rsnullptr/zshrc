@@ -1,5 +1,6 @@
 #!/bin/bash -e
 
+
 echo "current governor for cpu0 is:"
 cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 
@@ -13,11 +14,11 @@ then
     read choice
 fi
 
-echo "urray... changing governor to $choice..."
+echo "urray... changing governors to $choice..."
 for cpu in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor;
- do echo $choice >"$cpu";
+ do echo $cpu; \
+    echo $choice | sudo tee -a $cpu;
 done
 
 echo -e "\n\n current governor for cpu0 is:"
-
 cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
