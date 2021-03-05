@@ -68,9 +68,6 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # Tell Antigen that you're done.
 antigen apply
 
-# custom stuff in this very file
-source $HOME/custom.zsh
-
 # useful alias
 alias lr='ls -tr'
 alias lra='ls -tra'

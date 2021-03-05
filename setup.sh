@@ -2,9 +2,15 @@
 
 CURRENTDIR=$(pwd)
 
+
+sudo apt install zsh fortune cowsay
+
 # install oh my zsh
+echo -e "\n TODO fix maybe... "
+echo "!!! after oh my zsh installation simply type: exit"
+echo -e "\n"
+
 cd $HOME
-sudo apt install zsh fortune cowsay -y; \
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 #install antigen
@@ -12,9 +18,17 @@ curl -L git.io/antigen > $HOME/antigen.zsh
 
 # copy zshrc's
 cd $CURRENTDIR
-ln -s ./zshrc $HOME/zshrc
-ln -s ./.zshrc $HOME/.zshrc
+ln -s $(pwd)/zshrc $HOME/zshrc
+
+echo "your current .zshrc will be replaced (suffix .bkp)"
+cp $HOME/.zshrc $HOME/.zshrc.bkp 2> /dev/null
+cp ./.zshrc $HOME/.zshrc
 
 touch custom.zsh
-echo "echo 'Put yout custom stuff in: $HOME/custom.zsh'" >> custom.zsh
-cp ./custom.zsh $HOME/custom.zsh
+echo "export PATH=$(pwd)/scripts:$PATH" >> custom.zsh
+echo "Put your custom stuff in: $(pwd)/custom.zsh"
+
+# custom stuff in this very file
+echo "source $(pwd)/custom.zsh" >> $HOME/.zshrc 
+
+zsh

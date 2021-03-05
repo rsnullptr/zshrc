@@ -1,0 +1,15 @@
+#!/bin/bash -e
+
+#
+# simple way to increase scale when on integrated graphics
+# Omen 15 AMD RYZ 7 with Pop OS 20.10
+#
+
+AMD=$(system76-power graphics)
+if [[ $AMD == "integrated" ]]
+then
+	echo "aplying new resolution..."
+	xrandr --output eDP --scale 1.3x1.3
+else
+	echo "not in amd gpu, nothing done"
+fi
