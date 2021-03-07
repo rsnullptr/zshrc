@@ -1,0 +1,14 @@
+#!/bin/bash -e
+
+#
+# copy everything including .* files and sym links
+# why not rsync or cp? had some problems with symlinks and .folders... tar did it
+#
+# example: use it to move the home folder to other partition
+# integralcopy /home /mnt/newhome
+#
+cdir=$(pwd)
+
+(cd $1; tar cpf - .) | (cd $2; tar xf -)
+
+cd $cdir
