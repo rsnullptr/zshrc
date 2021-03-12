@@ -1,2 +1,3 @@
 export ZSH=$HOME"/.oh-my-zsh"
-source $HOME/zshrc
+
+#will be affected after running setup.sh

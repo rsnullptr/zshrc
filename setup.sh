@@ -17,9 +17,6 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 curl -L git.io/antigen > $HOME/antigen.zsh
 
 # copy zshrc's
-cd $CURRENTDIR
-ln -s $(pwd)/zshrc $HOME/zshrc
-
 echo "your current .zshrc will be replaced (suffix .bkp)"
 cp $HOME/.zshrc $HOME/.zshrc.bkp 2> /dev/null
 cp ./.zshrc $HOME/.zshrc
@@ -29,6 +26,7 @@ echo "export PATH=$(pwd)/scripts:$PATH" >> custom.zsh
 echo "Put your custom stuff in: $(pwd)/custom.zsh"
 
 # custom stuff in this very file
+echo "source $(pwd)/zshrc" >> $HOME/.zshrc 
 echo "source $(pwd)/custom.zsh" >> $HOME/.zshrc 
 
 zsh

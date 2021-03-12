@@ -78,6 +78,7 @@ alias listenports='sudo lsof -i -P -n | grep LISTEN'
 # git hacks
 alias gitroot='cd $(git rev-parse --show-toplevel)'
 alias gitctrlftrue='git config core.autocrlf true'
+alias gitignored='git ls-files . --ignored --exclude-standard --others'
 
 function gitsquash {
     echo "Squash from: " $1 "; to: " $2 "; msg: " $3;
