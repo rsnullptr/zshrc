@@ -1,7 +1,9 @@
 
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="fino"
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+#ZSH_THEME="takashiyoshida"
+#ZSH_THEME="robbyrussell"
+#ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" "fino" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -47,7 +49,16 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # see 'man strftime' for details.
 HIST_STAMPS="mm/dd/yyyy"
 
-plugins=(git)
+plugins=(
+git
+git
+docker
+colored-man-pages
+colorize
+pip
+python
+z
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -60,7 +71,6 @@ antigen bundle git
 antigen bundle heroku
 antigen bundle pip
 antigen bundle lein
-antigen bundle command-not-found
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -105,3 +115,5 @@ function fixsh {
 
 # some fun ....
 fortune | cowsay -f "tux"
+
+

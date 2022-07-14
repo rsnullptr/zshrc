@@ -3,7 +3,7 @@
 CURRENTDIR=$(pwd)
 
 
-sudo apt install zsh fortune cowsay
+#sudo apt install zsh fortune cowsay
 
 # install oh my zsh
 echo -e "\n TODO fix maybe... "
@@ -18,7 +18,7 @@ curl -L git.io/antigen > $HOME/antigen.zsh
 
 # copy zshrc's
 echo "your current .zshrc will be replaced (suffix .bkp)"
-cp $HOME/.zshrc $HOME/.zshrc.bkp 2> /dev/null
+mv $HOME/.zshrc $HOME/.zshrc.bkp 2> /dev/null
 cp ./.zshrc $HOME/.zshrc
 
 touch custom.zsh
